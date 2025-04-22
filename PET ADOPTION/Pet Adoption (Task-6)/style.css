@@ -1,0 +1,269 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif; 
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f9; 
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f76c6c; 
+}
+
+header {
+    background: linear-gradient(90deg, #333, #444); /* Subtle gradient */
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+header ul li {
+    margin: 0 20px;
+}
+
+header ul li a {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header ul li a:hover {
+    color: #f76c6c; /* Change color on hover */
+    transform: scale(1.1); /* Slight scaling on hover */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 4em; /* Larger text for emphasis */
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    max-width: 750px; /* Max width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero .button {
+    background: #f76c6c;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+
+.hero .button:hover {
+    background: #ff4c4c; /* Hover effect */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Pet Grid */
+.pet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.pet-card {
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pet-card:hover {
+    transform: translateY(-10px); /* Pop effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pet-card img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.pet-card h3 {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.pet-card p {
+    font-size: 1em;
+    color: #777;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 2px solid #f76c6c;
+}
+
+.testimonials h1 {
+    margin-bottom: 30px;
+    font-size: 2.8em;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.testimonial-card {
+    border-radius: 15px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card p {
+    margin: 0 0 15px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.testimonial-card strong {
+    font-size: 1.2em;
+    color: #333;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    font-size: 0.9em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Call to Action Section */
+.cta {
+    background: linear-gradient(90deg, #f76c6c, #ff8c8c);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.cta h2 {
+    font-size: 2.8em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.cta .button {
+    background: white;
+    color: #f76c6c;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.cta .button:hover {
+    background: #f76c6c;
+    color: white;
+    transform: translateY(-5px); /* Slight lift effect */
+}
+
+/* Animations for elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1,
+.hero p,
+.pet-card,
+.testimonial-card,
+.cta h2,
+.cta p {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Section Decorative Lines */
+section::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 5px;
+    background: #f76c6c;
+    margin: 20px auto;
+    border-radius: 10px;
+}
