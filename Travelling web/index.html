@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- slick -->
+    <link rel="stylesheet" href="./js/slick-1.8.1/slick/slick-theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <!-- style -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Travel</title>
+  </head>
+  <body>
+    <!-- header -->
+    <nav class="navbar navbar-expand-lg bg-dark py-3">
+      <div class="container">
+        <button
+          class="navbar-toggler bg-light"
+          type="button"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand fw-medium fs-5 text-light" href="/">
+          <span>T</span>RAVEL
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item me-3">
+              <a class="nav-link fw-semibold text-white" href="#">Home</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link fw-semibold text-white" href="#">Book</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link fw-semibold text-white" href="#">Packages</a>
+            </li>
+            <li class="nav-item me-3">
+              <a href="#" class="nav-link fw-semibold text-white">Services</a>
+            </li>
+            <li class="nav-item me-3">
+              <a href="#" class="nav-link fw-semibold text-white">Review</a>
+            </li>
+            <li class="nav-item me-3">
+              <a href="#" class="nav-link fw-semibold text-white">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!--  -->
+        <div class="icons">
+          <i
+            class="fas fa-search text-light fs-6 me-3"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          ></i>
+          <i
+            class="fas fa-user text-light fs-6"
+            type="button"
+            data-bs-toggle="modal" data-bs-target="#exampleModal"
+          ></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- search from -->
+    <div class="collapse" id="collapseExample">
+      <form class="w-75 mx-auto">
+        <input
+          class="form-control mt-1 border-primary-subtle"
+          type="search"
+          placeholder="search..."
+        />
+      </form>
+    </div>
+    <!-- login form -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header border-bottom-0">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h1 class="modal-title fs-5 text-center mb-3" id="exampleModalLabel">Login</h1>
+            <form>
+              <input class="form-control mb-2" type="email" placeholder="enter email">
+              <input class="form-control" type="email" placeholder="enter password?">
+            </form>
+          </div>
+          <div class="modal-footer me-auto border-top-0">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Login
+            </button>
+            <a href="#" class="text-danger">Forgot password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- side menu offcanvas -->
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item me-3">
+            <a class="nav-link fw-semibold" href="#">Home</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link fw-semibold" href="#">Book</a>
+          </li>
+          <li class="nav-item me-3">
+            <a class="nav-link fw-semibold" href="#">Packages</a>
+          </li>
+          <li class="nav-item me-3">
+            <a href="#" class="nav-link fw-semibold">Services</a>
+          </li>
+          <li class="nav-item me-3">
+            <a href="#" class="nav-link fw-semibold">Review</a>
+          </li>
+          <li class="nav-item me-3">
+            <a href="#" class="nav-link fw-semibold">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- booking section -->
+    <section class="container py-5">
+      <div class="row">
+        <div class="mx-auto col-sm-5 col-md-6">
+          <img
+            class="img-fluid"
+            src="./images/Hotel-Booking.svg"
+            alt="Booking"
+          />
+        </div>
+        <div class="mx-auto col-sm-7 col-md-6">
+          <form class="shadow p-3">
+            <div class="input-box mb-3">
+              <h5>
+                <label for="place">Place</label>
+              </h5>
+              <input
+                class="form-control"
+                id="place"
+                type="text"
+                placeholder="place name"
+              />
+            </div>
+            <div class="input-box mb-3">
+              <h5><label for="number">Guests</label></h5>
+              <input
+                class="form-control"
+                id="number"
+                type="number"
+                placeholder="number of guests"
+                min="1"
+              />
+            </div>
+            <div class="input-box mb-3">
+              <h5>
+                <label for="date">Arrival</label>
+              </h5>
+              <input class="form-control" id="date" type="date" />
+            </div>
+            <div class="input-box mb-3">
+              <h5><label for="payment">Payment</label></h5>
+              <select class="form-select" name="payment" id="payment">
+                <option value="">visa</option>
+                <option value="">american express</option>
+                <option value="">gift card</option>
+              </select>
+            </div>
+            <input type="submit" value="Book now" class="btn btn-blue" />
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- packages section -->
+    <section class="container py-5">
+      <div class="row g-3">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img class="img-fluid" src="./images/places/bali.svg" alt="Bali" />
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="fas fa-map-marker-alt blue-icon"></i>
+                Bali
+              </h5>
+              <p class="card-body my-1 p-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti
+              </p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="my-1">
+                <strong>$90.00</strong> <small class="text-decoration-line-through text-secondary">$130.00</small>
+              </div>
+              <button href="#" class="btn btn-blue">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img class="img-fluid" src="./images/places/china.svg" alt="Bali" />
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="fas fa-map-marker-alt blue-icon"></i>
+                China
+              </h5>
+              <p class="card-body my-1 p-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti
+              </p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="my-1">
+                <strong>$90.00</strong> <small class="text-decoration-line-through text-secondary">$130.00</small>
+              </div>
+              <button href="#" class="btn btn-blue">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img
+              class="img-fluid"
+              src="./images/places/hawaii.svg"
+              alt="Bali"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="fas fa-map-marker-alt blue-icon"></i>
+                Hawaii
+              </h5>
+              <p class="card-body my-1 p-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti
+              </p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="my-1">
+                <strong>$90.00</strong> <small class="text-decoration-line-through text-secondary">$130.00</small>
+              </div>
+              <button href="#" class="btn btn-blue">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img class="img-fluid" src="./images/places/egypt.svg" alt="Bali" />
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="fas fa-map-marker-alt blue-icon"></i>
+                Egypt
+              </h5>
+              <p class="card-body my-1 p-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti
+              </p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="my-1">
+                <strong>$90.00</strong> <small class="text-decoration-line-through text-secondary">$130.00</small>
+              </div>
+              <button href="#" class="btn btn-blue">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img
+              class="img-fluid"
+              src="./images/places/saint-martin.svg"
+              alt="Bali"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="fas fa-map-marker-alt blue-icon"></i>
+                Saint Martin
+              </h5>
+              <p class="card-body my-1 p-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti
+              </p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="my-1">
+                <strong>$90.00</strong> <small class="text-decoration-line-through text-secondary">$130.00</small>
+              </div>
+              <button href="#" class="btn btn-blue">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card">
+            <img
+              class="img-fluid"
+              src="./images/places/borneo.svg"
+              alt="Bali"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="fas fa-map-marker-alt blue-icon"></i>
+                Borneo
+              </h5>
+              <p class="card-body my-1 p-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti
+              </p>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="my-1">
+                <strong>$90.00</strong> <small class="text-decoration-line-through text-secondary">$130.00</small>
+              </div>
+              <button href="#" class="btn btn-blue">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- services section -->
+    <section class="container py-5">
+      <div class="row g-3">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card p-3">
+            <i
+              class="fas fa-hotel blue-icon display-5 text-center d-block img-fluid mb-3"
+            ></i>
+            <h5 class="card-title">Affordable Hotels</h5>
+            <p class="m-0 p-0 card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+              reprehenderit, eaque accusantium facilis repudiandae alias, sunt
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card p-3">
+            <i
+              class="fas fa-utensils blue-icon display-5 text-center d-block img-fluid mb-3"
+            ></i>
+            <h5 class="card-title">Food & Drinks</h5>
+            <p class="m-0 p-0 card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+              reprehenderit, eaque accusantium facilis repudiandae alias, sunt
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card p-3">
+            <i
+              class="fas fa-bullhorn blue-icon display-5 text-center d-block img-fluid mb-3"
+            ></i>
+            <h5 class="card-title">Security</h5>
+            <p class="m-0 p-0 card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+              reprehenderit, eaque accusantium facilis repudiandae alias, sunt
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card p-3">
+            <i
+              class="fas fa-globe-asia blue-icon display-5 text-center d-block img-fluid mb-3"
+            ></i>
+            <h5 class="card-title">Around The World</h5>
+            <p class="m-0 p-0 card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+              reprehenderit, eaque accusantium facilis repudiandae alias, sunt
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card p-3">
+            <i
+              class="fas fa-plane blue-icon display-5 text-center d-block img-fluid mb-3"
+            ></i>
+            <h5 class="card-title">Fastest Travel</h5>
+            <p class="m-0 p-0 card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+              reprehenderit, eaque accusantium facilis repudiandae alias, sunt
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card p-3">
+            <i
+              class="fas fa-hiking blue-icon display-5 text-center d-block img-fluid mb-3"
+            ></i>
+            <h5 class="card-title">Adventures</h5>
+            <p class="m-0 p-0 card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+              reprehenderit, eaque accusantium facilis repudiandae alias, sunt
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- contact section -->
+    <section class="container py-5">
+      <div class="row">
+        <div class="mx-auto col-md-5">
+          <img
+            class="img-fluid"
+            src="./images/Contact-us.svg"
+            alt="contact image"
+          />
+        </div>
+        <!-- contact from -->
+        <div class="mx-auto col-md-5">
+          <form class="p-3 shadow">
+            <div>
+              <input class="form-control mb-3" type="text" placeholder="name" />
+            </div>
+
+            <div>
+              <input
+                class="form-control mb-3"
+                type="email"
+                placeholder="email"
+              />
+            </div>
+
+            <div>
+              <textarea
+                class="form-control mb-3"
+                cols="50"
+                rows="10"
+                placeholder="message"
+              ></textarea>
+            </div>
+
+            <input type="submit" value="send" class="btn btn-blue" />
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- review section -->
+    <section class="container py-5">
+      <div class="row g-3">
+        <div class="col-lg-12 review-slider">
+          <div class="px-2 pt-5">
+            <div class="review-box p-2 rounded mb-5">
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
+            </div>
+          </div>
+          <div class="px-2 pt-5">
+            <div class="review-box p-2 rounded mb-5">
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
+            </div>
+          </div>
+          <div class="px-2 pt-5">
+            <div class="review-box p-2 rounded mb-5">
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
+            </div>
+          </div>
+          <div class="px-2 pt-5">
+            <div class="review-box p-2 rounded mb-5">
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
+            </div>
+          </div>
+          <div class="px-2 pt-5">
+            <div class="review-box p-2 rounded mb-5">
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
+            </div>
+          </div>
+          <div class="px-2 pt-5">
+            <div class="review-box p-2 rounded mb-5">
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
+            </div>
+          </div>
+          <div class="px-2 pt-5">
+            <div class="review-box p-2 rounded mb-5">
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
+            </div>
+          </div>
+          <div class="px-2 pt-5">
+            <div class="review-box p-2 rounded mb-5">
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
+            </div>
+          </div>
+          <div class="px-2 pt-5">
+            <div class="review-box p-2 rounded mb-5">
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
+            </div>
+          </div>
+          <div class="px-2 pt-5">
+            <div class="review-box p-2 rounded mb-5">
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
+            </div>
+          </div>
+          <div class="px-2 pt-5">
+            <div class="review-box p-2 rounded mb-5">
+              <div style="margin-bottom: 50px">
+                <img src="./images/user.png" class="reviewer-img" alt="" />
+              </div>
+              <h6 class="my-1 text-center">John Doe</h6>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                culpa nemo distinctio dignissimos nihil?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-dark text-light">
+      <div class="container pt-5 pb-3">
+        <div class="row g-3">
+          <!--  -->
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <h4>About us</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Architecto magnam laboriosam ducimus similique molestias minus
+              natus aspernatur veritatis? Ad, obcaecati!
+            </p>
+          </div>
+          <!--  -->
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <h4>Our branches</h4>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">india</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">bangladesh</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">indonesia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">india</a>
+              </li>
+            </ul>
+          </div>
+          <!--  -->
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <h4>Quick links</h4>
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item me-3">
+                <a class="nav-link" href="#">Book</a>
+              </li>
+              <li class="nav-item me-3">
+                <a class="nav-link" href="#">Packages</a>
+              </li>
+              <li class="nav-item me-3">
+                <a href="#" class="nav-link">Services</a>
+              </li>
+              <li class="nav-item me-3">
+                <a href="#" class="nav-link">Review</a>
+              </li>
+              <li class="nav-item me-3">
+                <a href="#" class="nav-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <!--  -->
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <h4>Follow us</h4>
+            <a href="#" class="text-light text-decoration-none me-3 fs-5">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="text-light text-decoration-none me-3 fs-5">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="text-light text-decoration-none me-3 fs-5">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="text-light text-decoration-none me-3 fs-5">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        <hr />
+        <p class="m-0 p-0 text-center">&copy; All right reserved 2020</p>
+      </div>
+    </footer>
+
+    <!-- icon -->
+    <script src="./js/icon.js"></script>
+    <!-- bootstrap -->
+    <script src="./js/bootstrap.js"></script>
+    <!-- slick jquery -->
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <!-- slick js -->
+    <script src="./js/slick-1.8.1/slick/slick.min.js"></script>
+    <!-- script -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
