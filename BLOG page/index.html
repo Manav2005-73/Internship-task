@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .sticky-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #5a9;
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .sticky-header nav ul {
+            list-style: none;
+            display: flex;
+        }
+        .sticky-header nav ul li {
+            margin: 0 10px;
+        }
+        .sticky-header nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+        .sticky-header nav ul li a:hover {
+            color: #333;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: #d4edda;
+        }
+        .categories {
+            text-align: center;
+            padding: 20px;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .post {
+            background: white;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .post:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            display: flex;
+            justify-content: space-around;
+            background: #5a9;
+            color: white;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 768px) {
+            .sticky-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="logo">MyBlog</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to Our Blog</h1>
+    </section>
+
+    <section id="categories" class="categories">
+        <h2>Categories</h2>
+        <button>Technology</button>
+        <button>Lifestyle</button>
+        <button>Health</button>
+        <button>Travel</button>
+        <button>Food</button>
+        <button>Business</button>
+    </section>
+
+    <section id="blogs" class="blog-grid">
+        <div class="post">
+            <h3>Exploring the Future of AI</h3>
+            <p>Discover the latest advancements in artificial intelligence and how they shape our future.</p>
+        </div>
+        <div class="post">
+            <h3>Healthy Living: Tips and Tricks</h3>
+            <p>Learn about simple habits that can improve your health and lifestyle.</p>
+        </div>
+        <div class="post">
+            <h3>Top Travel Destinations in 2025</h3>
+            <p>Plan your next adventure with these must-visit places for travelers.</p>
+        </div>
+    </section>
+
+    <section id="about" class="author-bio">
+        <h2>About Us</h2>
+        <p>Welcome to our blog where we share insights and articles on various topics.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: manavmaral73@gmail.com</p>
+        <p>Phone: +91 9356457566</p>
+    </section>
+
+    <footer>
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#about">About</a><br>
+            <a href="#contact">Contact</a><br>
+            <a href="#">Privacy Policy</a>
+        </div>
+        <div>
+            <h3>Recent Posts</h3>
+            <p>Exploring the Future of AI</p>
+            <p>Healthy Living: Tips and Tricks</p>
+            <p>Top Travel Destinations in 2025</p>
+        </div>
+        <div>
+            <h3>Follow Us</h3>
+            <p>Facebook | Twitter | Instagram</p>
+        </div>
+    </footer>
+</body>
+</html>
