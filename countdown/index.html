@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('Screenshot\ 2025-01-16\ 160940.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #0e0c0c;
+            animation: backgroundAnimation 30s infinite alternate;
+        }
+
+        /* Background Animation */
+        @keyframes backgroundAnimation {
+            0% {
+                background-color: rgba(44, 62, 80, 0.8);
+            }
+            100% {
+                background-color: rgba(76, 161, 175, 0.8);
+            }
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            color: #fff;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f39c12;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        header {
+            text-align: center;
+            color: #fff;
+            margin-top: 80px; /* To avoid overlap with navbar */
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #141310;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #100f0d;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .time-box {
+            background-color: rgba(22, 14, 14, 0.3);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            min-width: 80px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s;
+        }
+
+        .time-box:hover {
+            transform: scale(1.1);
+            background-color: rgba(23, 14, 14, 0.5);
+        }
+
+        .time-box span {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+            animation: bounce 1.5s infinite;
+        }
+
+        .email-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .email-section input {
+            padding: 10px;
+            width: 60%;
+            font-size: 1rem;
+            border-radius: 5px;
+            margin-right: 10px;
+            border: none;
+            outline: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .email-section input:focus {
+            border: 2px solid #f39c12;
+        }
+
+        .email-section button {
+            padding: 10px 20px;
+            background-color: #cd24a3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .email-section button:hover {
+            background-color: #e67e22;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #100d0d;
+            font-size: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #15120f;
+        }
+
+        footer {
+            text-align: center;
+            position: absolute;
+            padding: 2px;
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            font-size: 0.9rem;
+            color: #f1f0f0;
+        }
+
+        @media (max-width: 768px) {
+            .countdown {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .email-section input {
+                width: 80%;
+            }
+
+            .email-section button {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">My Website</div>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <!-- <li><a href="">Contact</a></li> -->
+        </ul>
+    </nav>
+
+    <main>
+        <header>
+            <h1>Birthday coming soon...</h1>
+            <p>Celebrate my birthday on</p>
+        </header>
+
+        <div class="countdown">
+            <div class="time-box">
+                <span id="days">00</span>
+                <p>Days</p>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <p>Hours</p>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <p>Minutes</p>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <p>Seconds</p>
+            </div>
+        </div>
+
+        <div class="email-section">
+            <p>Enter your email to get notified:</p>
+            <form action="submit_email.php" method="POST">
+                <input type="email" name="email" placeholder="Your email" required>
+                <button type="submit">Notify Me</button>
+            </form>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Your Company. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const launchDate = new Date("2026-01-01T00:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = launchDate - now;
+
+            if (timeLeft <= 0) {
+                document.querySelector(".countdown").innerHTML = "<h2>We're Live!</h2>";
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = String(days).padStart(2, "0");
+            document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+            document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+            document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
