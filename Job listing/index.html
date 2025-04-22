@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireSphere</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #eef2f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .filters input, .filters select {
+            padding: 12px;
+            border: 1px solid #3498db;
+            border-radius: 8px;
+            flex: 1 1 200px;
+            max-width: 250px;
+            background-color: #ffffff;
+            color: #34495e;
+        }
+        .filters input:focus, .filters select:focus {
+            border-color: #2980b9;
+            outline: none;
+        }
+        .job-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .job-card {
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            text-align: center;
+            color: #2c3e50;
+        }
+        .job-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .job-card h3 {
+            margin: 0 0 10px;
+            color: #34495e;
+        }
+        .job-card p {
+            margin: 5px 0;
+            color: #2c3e50;
+        }
+        .apply-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .apply-btn:hover {
+            background-color: #c0392b;
+        }
+
+        @media (max-width: 600px) {
+            .filters {
+                flex-direction: column;
+            }
+            .filters input, .filters select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Explore Exciting Job Opportunities 🌟</h1>
+        <div class="filters">
+            <input type="text" id="titleFilter" placeholder="Search by Job Title">
+            <input type="text" id="locationFilter" placeholder="Search by Location">
+            <select id="categoryFilter">
+                <option value="">Select Category</option>
+                <option value="IT">IT</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Finance">Finance</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Education">Education</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Sales">Sales</option>
+                <option value="Human Resources">Human Resources</option>
+                <option value="Legal">Legal</option>
+                <option value="Consulting">Consulting</option>
+            </select>
+            <select id="experienceFilter">
+                <option value="">Experience Level</option>
+                <option value="Entry">Entry Level</option>
+                <option value="Mid">Mid Level</option>
+                <option value="Senior">Senior Level</option>
+            </select>
+        </div>
+        <div class="job-cards" id="jobCards">
+            <div class="job-card" data-title="Software Engineer" data-location="New York" data-category="IT" data-experience="Mid">
+                <h3>Software Engineer</h3>
+                <p>📍 Pune,India</p>
+                <p>💼 IT Department</p>
+                <p>⚡ Mid-Level Experience</p>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="job-card" data-title="Marketing Specialist" data-location="San Francisco" data-category="Marketing" data-experience="Entry">
+                <h3>Marketing Specialist</h3>
+                <p>📍 Mumbai,India</p>
+                <p>💼 Marketing Team</p>
+                <p>⚡ Entry-Level Position</p>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="job-card" data-title="Financial Analyst" data-location="Chicago" data-category="Finance" data-experience="Senior">
+                <h3>Financial Analyst</h3>
+                <p>📍 Bangalore,India</p>
+                <p>💼 Finance Department</p>
+                <p>⚡ Senior-Level Role</p>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="job-card" data-title="Sales Manager" data-location="Miami" data-category="Sales" data-experience="Mid">
+                <h3>Sales Manager</h3>
+                <p>📍 Kerela,India</p>
+                <p>💼 Sales Department</p>
+                <p>⚡ Mid-Level Experience</p>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="job-card" data-title="HR Coordinator" data-location="Austin" data-category="Human Resources" data-experience="Entry">
+                <h3>HR Coordinator</h3>
+                <p>📍 Chennai,India</p>
+                <p>💼 Human Resources</p>
+                <p>⚡ Entry-Level Position</p>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="job-card" data-title="Legal Advisor" data-location="Washington D.C." data-category="Legal" data-experience="Senior">
+                <h3>Legal Advisor</h3>
+                <p>📍 Delhi,India</p>
+                <p>💼 Legal Department</p>
+                <p>⚡ Senior-Level Role</p>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+            <div class="job-card" data-title="Business Consultant" data-location="Denver" data-category="Consulting" data-experience="Mid">
+                <h3>Business Consultant</h3>
+                <p>📍 Kolkata,India</p>
+                <p>💼 Consulting Services</p>
+                <p>⚡ Mid-Level Experience</p>
+                <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const filters = document.querySelectorAll('.filters input, .filters select');
+        const jobCards = document.querySelectorAll('.job-card');
+
+        filters.forEach(filter => {
+            filter.addEventListener('input', () => {
+                const title = document.getElementById('titleFilter').value.toLowerCase();
+                const location = document.getElementById('locationFilter').value.toLowerCase();
+                const category = document.getElementById('categoryFilter').value.toLowerCase();
+                const experience = document.getElementById('experienceFilter').value.toLowerCase();
+
+                jobCards.forEach(card => {
+                    const cardTitle = card.getAttribute('data-title').toLowerCase();
+                    const cardLocation = card.getAttribute('data-location').toLowerCase();
+                    const cardCategory = card.getAttribute('data-category').toLowerCase();
+                    const cardExperience = card.getAttribute('data-experience').toLowerCase();
+
+                    if (
+                        (title === '' || cardTitle.includes(title)) &&
+                        (location === '' || cardLocation.includes(location)) &&
+                        (category === '' || cardCategory === category) &&
+                        (experience === '' || cardExperience === experience)
+                    ) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
