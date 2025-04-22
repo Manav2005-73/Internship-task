@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Hall</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin: 20px 0;
+            font-size: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin: 20px 0;
+        }
+
+        /* Movie Sections */
+        .movie-section {
+            width: 90%;
+            max-width: 1300px;
+            margin-bottom: 30px;
+        }
+
+        .movie-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 10px 0;
+        }
+
+        .movie-card {
+            background: #1e1e1e;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .movie-card img {
+            width: 100%;
+            border-radius: 8px;
+            height: 280px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .star {
+            cursor: pointer;
+            font-size: 20px;
+            transition: color 0.2s;
+            color: gray;
+        }
+
+        .star.selected {
+            color: gold;
+        }
+
+        /* Responsive Grid */
+        @media (max-width: 1024px) {
+            .movie-list {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .movie-list {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎬 Movie </h1>
+
+    <div id="trending" class="movie-section">
+        <h2 class="section-title">🔥 Trending Movies</h2>
+        <div class="movie-list"></div>
+    </div>
+
+    <div id="top-rated" class="movie-section">
+        <h2 class="section-title">⭐ Top Rated</h2>
+        <div class="movie-list"></div>
+    </div>
+
+    <div id="classics" class="movie-section">
+        <h2 class="section-title">🎞️ Classic Movies</h2>
+        <div class="movie-list"></div>
+    </div>
+
+    <script>
+        const movies = {
+            trending: [
+                { title: "Dune", genre: "Sci-Fi", year: 2021, rating: 5, img: "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg" },
+                { title: "Spider-Man: No Way Home", genre: "Action", year: 2021, rating: 5, img: "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg" },
+                { title: "John Wick 4", genre: "Action", year: 2023, rating: 4, img: "https://image.tmdb.org/t/p/w500/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg" },
+                { title: "Avatar: The Way of Water", genre: "Sci-Fi", year: 2022, rating: 5, img: "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" }
+            ],
+            topRated: [
+                { title: "The Godfather", genre: "Crime", year: 1972, rating: 5, img: "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" },
+                { title: "Shawshank Redemption", genre: "Drama", year: 1994, rating: 5, img: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" },
+                { title: "Forrest Gump", genre: "Drama", year: 1994, rating: 5, img: "https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg" },
+                { title: "The Dark Knight", genre: "Action", year: 2008, rating: 5, img: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" }
+            ],
+            classics: [
+                { title: "Casablanca", genre: "Romance", year: 1942, rating: 4, img: "https://image.tmdb.org/t/p/w500/5K7cOHoay2mZusSLezBOY0Qxh8a.jpg" },
+                { title: "Citizen Kane", genre: "Mystery", year: 1941, rating: 5, img: "https://image.tmdb.org/t/p/w500/1IvdAtvG5Zbggzg9U5QaPHoP7N8.jpg" },
+                { title: "Gone with the Wind", genre: "Drama", year: 1939, rating: 5, img: "https://image.tmdb.org/t/p/w500/jFExhUvXuFkHobwBBPgcWKIAPOp.jpg" },
+                { title: "12 Angry Men", genre: "Drama", year: 1957, rating: 5, img: "https://image.tmdb.org/t/p/w500/e02s4wmTAExkKgJMmT8r8lc9q9Q.jpg" }
+            ]
+        };
+
+        function renderMovies(sectionId, movieList) {
+            const container = document.querySelector(`#${sectionId} .movie-list`);
+            container.innerHTML = "";
+            movieList.forEach(movie => {
+                const movieCard = document.createElement("div");
+                movieCard.classList.add("movie-card");
+                movieCard.innerHTML = `
+                    <img src="${movie.img}" alt="${movie.title}">
+                    <h2>${movie.title}</h2>
+                    <p>${movie.genre} | ${movie.year}</p>
+                    <div class="stars">
+                        ${[1, 2, 3, 4, 5].map(star => `
+                            <span class="star ${star <= movie.rating ? 'selected' : ''}">★</span>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(movieCard);
+            });
+        }
+
+        renderMovies("trending", movies.trending);
+        renderMovies("top-rated", movies.topRated);
+        renderMovies("classics", movies.classics);
+    </script>
+
+</body>
+</html>
